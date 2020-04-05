@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefWidth="800" prefHeight="800" fx:controller="HomeFX"
+            stylesheets="style.css"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <Label styleClass="app-title" maxWidth="Infinity" alignment="TOP_CENTER">
+            <text>DupliFinder</text>
+            <graphic>
+                <ImageView fitHeight="35" fitWidth="35">
+                    <image>
+                        <Image url="duplicate-icon.png"/>
+                    </image>
+                </ImageView>
+            </graphic>
+        </Label>
+    </top>
+
+    <center>
+        <GridPane hgap="10" vgap="10" alignment="CENTER">
+            <Button styleClass="btn" text="Select Source" GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="browseSourceDirectoryBtn"/>
+            <Button styleClass="btn" text="Select Destination" GridPane.rowIndex="1" GridPane.columnIndex="2" fx:id="browseDestinationDirectoryBtn"/>
+
+
+            <TextField styleClass="dir-textfield" disable="true" fx:id="sourceDirTextField" promptText="No Source Directory Selected" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <TextField styleClass="dir-textfield" disable="true" fx:id="destinationDirTextField" promptText="No Destination Directory Selected" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+            <TableView GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="table-view" fx:id="duplicateFilesTableView">
+
+            </TableView>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <BorderPane>
+            <center>
+                <GridPane alignment="CENTER">
+                    <Button styleClass="btn" text="Search" GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="findDuplicatesBtn">
+                        <GridPane.margin>
+                            <Insets>
+                                <top>10</top>
+                                <bottom>70</bottom>
+                                <right>4</right>
+                            </Insets>
+                        </GridPane.margin>
+                    </Button>
+                </GridPane>
+            </center>
+        </BorderPane>
+    </bottom>
+
+</BorderPane>
